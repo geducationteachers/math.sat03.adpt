@@ -631,9 +631,10 @@
 
 <script>
 /* CONFIG — edit these 3 lines for a new test (comments are for the teacher only) */
-let TEST_NAME = "Test 3 M";   // tên gốc của đề (dùng cho lưu bài làm dở); tab nộp bài lấy theo TEST_NAME_BY_TRACK
+let TEST_NAME = "TEST03adpt";   // tên gốc của đề (dùng cho lưu bài làm dở); tab nộp bài lấy theo TEST_NAME_BY_TRACK
 const TEST_NAME_BY_TRACK = { easy: "Test 3 Easy M", hard: "Test 3 Hard M" };   // tên tab KEY cho từng nhánh Module 2
 const ADAPTIVE_THRESHOLD = 15;   // số câu đúng Module 1 (trên 22) để vào Module 2 HARD
+const UNLOCK_TEST_NAME = "TEST03adpt";   // tên dùng chung cho mã mở đáp án (cả 2 nhánh)
 const TEST_SECTION = "M";
 const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyJcjvbCi9xqa0NR-TGyJvpjvqJkcGHKA-x_uw6kazLVng3jKZgsqJg55ae7pPaYmWO_w/exec";
 const TIME_LIMIT_MINUTES = 35;   // thời gian cho MỖI module
@@ -2001,7 +2002,7 @@ function checkAnswerKey(){
   };
   const params = new URLSearchParams({
     action: 'getUnlockCode',
-    test_name: TEST_NAME,
+    test_name: UNLOCK_TEST_NAME,
     section: TEST_SECTION,
     callback: cbName
   });
